@@ -1,0 +1,34 @@
+﻿// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-blue: #007bff;
+$color-dark-blue: #004a99;
+$color-dark-gray: #1a1a1a;
+$color-red: #dc3545;
+$color-green: #28a745;
+
+// Typography
+$font-primary: 'Inter', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 1rem;
+
+// Border Radius
+$border-radius: 8px;
+$border-radius-sm: 4px;
+
+// Transitions
+$transition-base: all 0.3s ease;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-modal: 2000;

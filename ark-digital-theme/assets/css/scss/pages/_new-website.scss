@@ -1,0 +1,332 @@
+@use "../base/variables" as *;
+@use "../components/buttons";  // Import buttons first
+
+
+.new-website-page {
+    // Hero Section
+    .new-website-hero {
+        min-height: 60vh;
+        background: linear-gradient(-45deg, $color-black, $color-dark-blue);
+        padding: 6rem 0;
+        text-align: center;
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: $color-white;
+
+            @media (max-width: $breakpoint-md) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .hero-price {
+            font-size: 1.5rem;
+            color: $color-blue;
+            margin-bottom: 3rem;
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .feature-item {
+            background: rgba($color-white, 0.05);
+            padding: 2rem;
+            border-radius: $border-radius;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                color: $color-blue;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: rgba($color-white, 0.8);
+            }
+        }
+    }
+
+    // Package Includes Section
+    .package-includes {
+        padding: 100px 0;
+        background-color: $color-dark-gray;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .include-card {
+            background: rgba($color-white, 0.03);
+            padding: 2rem;
+            border-radius: $border-radius;
+            border-left: 3px solid $color-blue;
+
+            h3 {
+                color: $color-blue;
+                margin-bottom: 1.5rem;
+                font-size: 1.25rem;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    padding-left: 1.5rem;
+                    position: relative;
+                    margin-bottom: 0.75rem;
+                    color: rgba($color-white, 0.9);
+
+                    &:before {
+                        content: "✓";
+                        position: absolute;
+                        left: 0;
+                        color: $color-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    // CTA Section
+    .website-cta {
+        padding: 80px 0;
+        background: linear-gradient(45deg, $color-black, $color-dark-blue);
+        text-align: center;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            color: rgba($color-white, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+
+            @media (max-width: $breakpoint-md) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    .domain-checker-section {
+        padding: 80px 0;
+        background: $color-dark-gray;
+        text-align: center;
+    
+        .container {
+            max-width: 800px;  // Reduced from 1200px for better layout
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+    
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: $color-white;
+        }
+    
+        p {
+            color: rgba($color-white, 0.8);
+            margin-bottom: 2rem;
+        }
+    
+        .domain-checker-wrapper {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: 1fr auto;  // Changed to grid for better control
+            gap: 1rem;
+            padding: 0 1rem;
+    
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+    
+            .domain-checker {
+                width: 100%;
+                padding: 1rem 1.5rem;
+                background: rgba($color-white, 0.05);
+                border: 1px solid rgba($color-white, 0.2);
+                border-radius: $border-radius;
+                color: $color-white;
+                font-size: 1rem;
+                transition: $transition-base;
+    
+                &::placeholder {
+                    color: rgba($color-white, 0.6);
+                }
+    
+                &:focus {
+                    border-color: $color-blue;
+                    outline: none;
+                    background: rgba($color-white, 0.08);
+                }
+            }
+    
+            .check-domain {
+                padding: 1rem 2rem;
+                background: $color-blue;
+                color: $color-white;
+                border: none;
+                border-radius: $border-radius;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                white-space: nowrap;  // Prevent text wrapping
+                min-width: 160px;
+    
+                &:hover {
+                    background: darken($color-blue, 5%);
+                    transform: translateY(-2px);
+                }
+    
+                &:disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                    transform: none;
+                }
+            }
+        }
+    
+        .domain-result {
+            max-width: 600px;
+            margin: 1rem auto;
+            padding: 1rem;
+            border-radius: $border-radius;
+            text-align: center;
+            font-size: 1rem;
+    
+            &.available {
+                background: rgba($color-green, 0.1);
+                border: 1px solid rgba($color-green, 0.2);
+                color: lighten($color-green, 20%);
+            }
+    
+            &.unavailable {
+                background: rgba($color-red, 0.1);
+                border: 1px solid rgba($color-red, 0.2);
+                color: lighten($color-red, 20%);
+            }
+    
+            .success, .error {
+                font-weight: bold;
+                margin-right: 0.5rem;
+            }
+    
+            .success {
+                color: $color-green;
+            }
+    
+            .error {
+                color: $color-red;
+            }
+        }
+    }
+
+    // Process Section
+    .process-section {
+        padding: 100px 0;
+        background: $color-black;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 40px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: $color-blue;
+                z-index: 0;
+
+                @media (max-width: $breakpoint-md) {
+                    display: none;
+                }
+            }
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+
+            .step-number {
+                width: 80px;
+                height: 80px;
+                background: $color-blue;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1.5rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: $color-white;
+            }
+
+            h3 {
+                color: $color-blue;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: rgba($color-white, 0.8);
+            }
+        }
+    }
+}

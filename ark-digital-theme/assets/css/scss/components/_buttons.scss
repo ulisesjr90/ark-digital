@@ -1,0 +1,33 @@
+﻿@use "../base/variables" as *;
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &-primary {
+        background-color: $color-blue;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-dark-blue;
+            transform: translateY(-2px);
+        }
+    }
+
+    &-secondary {
+        background-color: transparent;
+        color: $color-white;
+        border: 1px solid $color-white;
+        margin-left: 1rem;
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-black;
+            transform: translateY(-2px);
+        }
+    }
+}

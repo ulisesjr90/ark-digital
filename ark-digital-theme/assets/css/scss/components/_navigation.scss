@@ -1,0 +1,23 @@
+﻿@use "../base/variables" as *;
+
+.main-navigation {
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    a {
+        color: $color-white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-blue;
+        }
+    }
+
+    @media (max-width: $breakpoint-md) {
+        display: none; // Hide on mobile
+    }
+}

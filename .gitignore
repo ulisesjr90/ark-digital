@@ -1,0 +1,29 @@
+node_modules/
+.DS_Store
+*.log
+
+# WordPress specific files
+wp-config.php
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/ark-digital-theme/
+
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Development files
+.DS_Store
+.vscode/
+*.log
+debug.log
+
+# Compiled files
+*.map
+*.css.map
+
+# Environment files
+.env
+.env.*

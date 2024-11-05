@@ -1,0 +1,15 @@
+﻿{
+  "name": "ark-digital",
+  "version": "1.0.0",
+  "description": "ARK Digital WordPress Theme",
+  "type": "module",
+  "scripts": {
+    "sass": "sass ark-digital-theme/assets/css/scss/main.scss ark-digital-theme/assets/css/main.css --watch --style=compressed",
+    "sass:build": "sass ark-digital-theme/assets/css/scss/main.scss ark-digital-theme/assets/css/main.css --style=compressed",
+    "start": "npm run sass",
+    "build": "npm run sass:build"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

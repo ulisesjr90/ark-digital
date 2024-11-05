@@ -1,0 +1,25 @@
+﻿@use "../base/variables" as *;
+
+.services {
+    padding: 4rem 0;
+
+    &__grid {
+        display: grid;
+        gap: 1rem;
+        
+        @media (min-width: $breakpoint-md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (min-width: $breakpoint-lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__card {
+        padding: 2rem;
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+}

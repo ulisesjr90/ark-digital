@@ -1,0 +1,29 @@
+﻿@use "../base/variables" as *;
+
+.site-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba($color-black, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+
+    .header-container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: 0 $container-padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-branding {
+        a {
+            color: $color-white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    }
+}

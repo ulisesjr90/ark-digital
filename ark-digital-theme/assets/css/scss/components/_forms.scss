@@ -1,0 +1,127 @@
+﻿@use "../base/variables" as *;
+
+// Consultation form wrapper
+.full-package-page {
+    .consultation-form {
+        background: rgba($color-white, 0.05);
+        padding: 2rem;
+        border-radius: $border-radius;
+        backdrop-filter: blur(10px);
+        
+        // Target Contact Form 7 specifically
+        .wpcf7 {
+            width: 100%;
+            
+            form.wpcf7-form {
+                max-width: 600px;
+                margin: 0 auto;
+                display: grid;
+                gap: 1.5rem;
+                
+                // Form groups and rows
+                .form-group {
+                    margin-bottom: 1rem;
+                }
+                
+                .form-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    
+                    @media (max-width: $breakpoint-md) {
+                        grid-template-columns: 1fr;
+                    }
+                }
+                
+                // Form fields
+                input[type="text"],
+                input[type="email"],
+                input[type="tel"],
+                select,
+                textarea {
+                    width: 100% !important; // Force override
+                    padding: 1rem !important;
+                    background: rgba($color-white, 0.1) !important;
+                    border: 1px solid rgba($color-white, 0.2) !important;
+                    border-radius: $border-radius-sm !important;
+                    color: $color-white !important;
+                    font-size: 1rem !important;
+                    transition: all 0.3s ease !important;
+                    
+                    &::placeholder {
+                        color: rgba($color-white, 0.6) !important;
+                    }
+                    
+                    &:focus {
+                        border-color: $color-blue !important;
+                        outline: none !important;
+                        background: rgba($color-white, 0.15) !important;
+                    }
+                }
+                
+                // Select field styling
+                select {
+                    appearance: none !important;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E") !important;
+                    background-repeat: no-repeat !important;
+                    background-position: right 1rem center !important;
+                    padding-right: 2.5rem !important;
+                    
+                    option {
+                        background: $color-dark-gray !important;
+                        color: $color-white !important;
+                    }
+                }
+                
+                // Submit button
+                .wpcf7-submit {
+                    width: 100% !important;
+                    padding: 1rem 2rem !important;
+                    background: $color-blue !important;
+                    color: $color-white !important;
+                    border: none !important;
+                    border-radius: $border-radius-sm !important;
+                    font-size: 1rem !important;
+                    font-weight: 500 !important;
+                    cursor: pointer !important;
+                    transition: all 0.3s ease !important;
+                    
+                    &:hover {
+                        background: lighten($color-blue, 5%) !important;
+                        transform: translateY(-2px) !important;
+                    }
+                    
+                    &:active {
+                        transform: translateY(0) !important;
+                    }
+                }
+                
+                // Form messages
+                .wpcf7-response-output {
+                    margin: 2rem 0 0 !important;
+                    padding: 1rem !important;
+                    border-radius: $border-radius-sm !important;
+                    text-align: center !important;
+                    
+                    &.wpcf7-validation-errors {
+                        background: rgba($color-red, 0.1) !important;
+                        border: 1px solid rgba($color-red, 0.2) !important;
+                        color: lighten($color-red, 20%) !important;
+                    }
+                    
+                    &.wpcf7-mail-sent-ok {
+                        background: rgba($color-green, 0.1) !important;
+                        border: 1px solid rgba($color-green, 0.2) !important;
+                        color: lighten($color-green, 20%) !important;
+                    }
+                }
+                
+                .wpcf7-not-valid-tip {
+                    color: lighten($color-red, 20%) !important;
+                    font-size: 0.875rem !important;
+                    margin-top: 0.25rem !important;
+                }
+            }
+        }
+    }
+}

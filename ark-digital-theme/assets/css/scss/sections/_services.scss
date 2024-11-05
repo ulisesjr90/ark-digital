@@ -1,0 +1,100 @@
+﻿// _services.scss
+@use "../base/variables" as *;
+
+.services {
+    padding: 100px 0;
+    background-color: $color-dark-gray;
+
+    &-container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: 0 $container-padding;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .service-card {
+        background: $color-black;
+        padding: 2rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-5px);
+            background: $color-dark-gray;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            color: $color-blue;
+        }
+
+        p {
+            color: rgba($color-white, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding-left: 1.5rem;
+                position: relative;
+                margin-bottom: 0.75rem;
+                color: $color-white;
+
+                &:before {
+                    content: "→";
+                    position: absolute;
+                    left: 0;
+                    color: $color-blue;
+                    transition: transform 0.4s ease;
+                }
+            }
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba($color-blue, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+
+            .service-features li:before {
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .services {
+        padding: 60px 0;
+
+        &-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+}

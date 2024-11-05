@@ -1,0 +1,131 @@
+﻿// _integrations.scss
+@use "../base/variables" as *;
+
+.integrations {
+    padding: 100px 0;
+    background: $color-black;
+
+    .container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: 0 $container-padding;
+    }
+
+    .tools-showcase {
+        margin-top: 3rem;
+        background: $color-dark-gray;
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
+
+    .tools-nav {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background: rgba($color-white, 0.03);
+
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+        }
+    }
+
+    .tool-tab {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+        background: none;
+        border: none;
+        color: $color-white;
+        cursor: pointer;
+        border-radius: $border-radius-sm;
+        transition: $transition-base;
+
+        &.active {
+            background: $color-blue;
+        }
+
+        &:hover:not(.active) {
+            background: rgba($color-white, 0.1);
+        }
+
+        @media (max-width: $breakpoint-md) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .tools-content {
+        padding: 2rem;
+    }
+
+    .tool-panel {
+        display: none;
+        animation: fadeIn 0.3s ease;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .tool-info {
+        max-width: 800px;
+        margin: 0 auto;
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: $color-white;
+        }
+
+        p {
+            color: rgba($color-white, 0.8);
+            margin-bottom: 2rem;
+        }
+    }
+
+    .tool-examples {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .tool-badge {
+        background: rgba($color-blue, 0.1);
+        color: $color-blue;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 500;
+    }
+
+    .tool-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .feature {
+        background: rgba($color-white, 0.05);
+        padding: 1rem;
+        border-radius: $border-radius-sm;
+        text-align: center;
+        transition: $transition-base;
+
+        &:hover {
+            background: rgba($color-white, 0.1);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}

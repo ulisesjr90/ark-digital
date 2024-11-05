@@ -1,0 +1,169 @@
+﻿// Base imports
+@use "base/variables" as *;
+@use "base/reset";
+@use "base/typography";
+
+// Layout imports
+@use "layouts/header";
+@use "layouts/footer";
+@use "layouts/grid";
+
+// Component imports - Update forms import
+@forward "components/forms";  
+@use "components/buttons";
+@use "components/navigation";
+
+// Section imports
+@use "sections/hero";
+@use "sections/services";
+@use "sections/integrations";
+@use "sections/why-ark";
+@use "sections/pricing";
+
+// Page imports
+@use "pages/full-package";
+@use "pages/new-website";  
+
+
+// Global styles
+html {
+    font-size: $font-size-base;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+    line-height: $line-height-base;
+    color: $color-white;
+    background-color: $color-black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Container
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+// Section common styles
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $color-white;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: 2rem;
+    }
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: rgba($color-white, 0.8);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: 1.125rem;
+    }
+}
+
+// Utility classes
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+// Animations
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+// Responsive images
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Links
+a {
+    color: $color-blue;
+    text-decoration: none;
+    transition: $transition-base;
+
+    &:hover {
+        color: lighten($color-blue, 10%);
+    }
+}
+
+// Selection
+::selection {
+    background: $color-blue;
+    color: $color-white;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $color-dark-gray;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-blue;
+    border-radius: 5px;
+
+    &:hover {
+        background: darken($color-blue, 10%);
+    }
+}
+
+// Focus styles
+:focus {
+    outline: 2px solid $color-blue;
+    outline-offset: 2px;
+}
+
+// Skip to main content
+.skip-to-main-content-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: $color-black;
+    color: $color-white;
+    opacity: 0;
+
+    &:focus {
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+}

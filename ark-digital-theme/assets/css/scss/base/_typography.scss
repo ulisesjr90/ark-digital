@@ -1,0 +1,32 @@
+﻿@use "variables" as *;
+
+// Typography
+$font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// Colors
+$color-black: #0A0A0A;
+$color-dark-gray: #1A1A1A;
+$color-blue: #007AFF;
+$color-dark-blue: #004399;
+$color-white: #F5F5F5;
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: rgba($color-white, 0.8);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
