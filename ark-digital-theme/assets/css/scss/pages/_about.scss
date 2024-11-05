@@ -1,0 +1,328 @@
+@use "../base/variables" as *;
+
+.about-page {
+    // Hero Section
+    .about-hero {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(-45deg, $color-black, $color-dark-blue);
+        padding: 6rem 0;
+        text-align: center;
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: $color-white;
+
+            @media (max-width: $breakpoint-md) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba($color-white, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    // Our Story Section
+    .our-story {
+        padding: 100px 0;
+        background-color: $color-dark-gray;
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+
+            p {
+                color: rgba($color-white, 0.9);
+                font-size: 1.1rem;
+                line-height: 1.8;
+                margin-bottom: 1.5rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // Our Values Section
+    .our-values {
+        padding: 100px 0;
+        background: $color-black;
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .value-card {
+            background: rgba($color-white, 0.05);
+            padding: 2rem;
+            border-radius: $border-radius;
+            text-align: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .value-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                color: $color-blue;
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+            }
+
+            p {
+                color: rgba($color-white, 0.8);
+                line-height: 1.6;
+            }
+        }
+    }
+
+    // Why Choose Us Section
+    .why-choose-us {
+        padding: 100px 0;
+        background: linear-gradient(45deg, $color-black, $color-dark-blue);
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+
+            @media (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .benefit-item {
+            padding: 2rem;
+            background: rgba($color-white, 0.05);
+            border-radius: $border-radius;
+            border-left: 3px solid $color-blue;
+
+            h3 {
+                color: $color-blue;
+                margin-bottom: 1rem;
+                font-size: 1.25rem;
+            }
+
+            p {
+                color: rgba($color-white, 0.8);
+                line-height: 1.6;
+            }
+        }
+    }
+
+    // CTA Section
+    .about-cta {
+        padding: 80px 0;
+        background: $color-dark-gray;
+        text-align: center;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: rgba($color-white, 0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .button {
+            margin: 0 auto;
+        }
+    }
+
+// Previous styles remain...
+
+.team-section {
+    padding: 100px 0;
+    background: $color-black;
+
+    .team-photo {
+        margin: 3rem 0;
+        border-radius: $border-radius;
+        overflow: hidden;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .team-leaders {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+    .team-card {
+        background: rgba($color-white, 0.05);
+        border-radius: $border-radius;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .card-content {
+            padding: 1.5rem;
+
+            h3 {
+                color: $color-white;
+                margin-bottom: 0.5rem;
+            }
+
+            .title {
+                color: $color-blue;
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .preview {
+                color: rgba($color-white, 0.8);
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+            }
+
+            .read-more {
+                background: none;
+                border: 1px solid $color-blue;
+                color: $color-blue;
+                padding: 0.5rem 1rem;
+                border-radius: $border-radius-sm;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: $color-blue;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+
+// Modal styles
+.team-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color-black, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+    overflow-y: auto;
+
+    &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background: $color-dark-gray;
+        border-radius: $border-radius;
+        max-width: 900px;
+        width: 100%;
+        position: relative;
+        padding: 2rem;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: $color-white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        line-height: 1;
+    }
+
+    .modal-grid {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .modal-image {
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $border-radius-sm;
+        }
+    }
+
+    .modal-text {
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            color: $color-blue;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio {
+            color: rgba($color-white, 0.9);
+            line-height: 1.8;
+
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+}
