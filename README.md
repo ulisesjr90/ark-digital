@@ -14,7 +14,7 @@ A professional WordPress theme for digital service businesses.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/ark-digital.git
+git clone https://github.com/ulisesjr90/ark-digital.git
 ```
 
 2. Navigate to the theme directory:
